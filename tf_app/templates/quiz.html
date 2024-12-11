@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>10問まるバツクイズ</h1>
+    <form method="POST" action="/quiz">
+        {% for question in questions %}
+            <p>{{ question.text }}</p>
+            <button type="submit" name="{{ question.id }}" value="true">
+                <img src="/static/maru.jpg" alt="丸">
+            </button>
+            <button type="submit" name="{{ question.id }}" value="false">
+                <img src="/static/batsu.jpg" alt="バツ">
+            </button>
+        {% endfor %}
+    </form>
+</body>
+</html>
